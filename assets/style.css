@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-image: url(./picture/alan-chen-Ekl9AXrY5-0-unsplash.jpg);
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 7rem;
+    margin-top: -10rem;
+    color: rgba(151, 140, 140, 0.6);
+    cursor: pointer;
+}
+
+h1:hover {
+    color: rgba(35, 33, 33, 0.6);
+}
+
+.countDown-container {
+    /* color: rgb(29, 36, 42); */
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.number {
+    font-size: 5rem;
+    font-weight: bolder;
+    line-height: 1;
+    margin: 0 2.7rem;
+    color: rgb(208, 233, 62);
+}
+
+.Celement {
+    text-align: center;
+}
+
+.Celement span {
+    font-size: 2rem;
+    color: rgba(210, 219, 40, 0.4);
+}

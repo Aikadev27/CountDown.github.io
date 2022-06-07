@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/script.js"></script>
+    <title>countDown</title>
+</head>
+
+<body>
+    <h1>Count Down Timer</h1>
+    <div class="countDown-container">
+        <div class="Celement days-c ">
+            <p class="number" id="day">0</p>
+            <span class="title">DAY</span>
+        </div>
+        <div class="Celement hours-c ">
+            <p class="number" id="hour"> 0</p>
+            <span class="title">HOUR</span>
+        </div>
+        <div class="Celement mins-c ">
+            <p class="number" id="min">0</p>
+            <span class="title ">MINUTE</span>
+        </div>
+        <div class="Celement secs-c ">
+            <p class="number" id="sec">0</p>
+            <span class="title ">SEC</span>
+        </div>
+    </div>
+</body>
+<script>
+    const daysEL = document.getElementById("day");
+    const hoursEL = document.getElementById("hour");
+    const minsEL = document.getElementById("min");
+    const secsEL = document.getElementById("sec");
+    const newYears = "1 Jan 2023";
+
+
+    function CountDown() {
+        const newYearsDate = new Date(newYears);
+        const currentDate = new Date();
+        const total = (newYearsDate - currentDate) / 1000;
+        const days = Math.floor(total / 3600 / 24)
+        const hours = Math.floor(total / 3600) % 24;
+        const minutes = Math.floor((total / 60)) % 60;
+        const seconds = Math.floor(total % 60);
+        daysEL.innerHTML = formatTime(days);
+        hoursEL.innerHTML = formatTime(hours);
+        minsEL.innerHTML = formatTime(minutes);
+        secsEL.innerHTML = formatTime(seconds);
+    }
+
+    function formatTime(time) {
+        return time < 10 ? `0${time}` : time;
+    }
+    CountDown();
+    setInterval(CountDown, 1000);
+</script>
+
+</html>
